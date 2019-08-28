@@ -237,6 +237,18 @@ declare module '@primer/components' {
 
   export const StateLabel: React.FunctionComponent<StateLabelProps>
 
+  export interface TabNavProps extends CommonProps {
+    'aria-label'?: string
+  }
+
+  export interface TabNavItemProps extends CommonProps {
+    selected?: boolean
+  }
+
+  export const TabNav: React.FunctionComponent<TabNavProps> & {
+    Item: React.FunctionComponent<TabNavItemProps>
+  }
+
   export interface TextInputProps extends CommonProps {
     autocomplete?: string
     'aria-label'?: string
@@ -272,7 +284,13 @@ declare module '@primer/components' {
     label?: string
   }
 
-  export const UnderlineNav: React.FunctionComponent<UnderlineNavProps>
+  export interface UnderlineNavItemProps extends CommonProps {
+    selected?: boolean
+  }
+
+  export const UnderlineNav: React.FunctionComponent<UnderlineNavProps> & {
+    Item: React.FunctionComponent<UnderlineNavItemProps>
+  }
 
   export const theme: Object
 }
@@ -403,6 +421,10 @@ declare module '@primer/components/src/Fixed' {
 declare module '@primer/components/src/StateLabel' {
   import {StateLabel} from '@primer/components'
   export default StateLabel
+}
+declare module '@primer/components/src/TabNav' {
+  import {TabNav} from '@primer/components'
+  export default TabNav
 }
 declare module '@primer/components/src/TextInput' {
   import {TextInput} from '@primer/components'
